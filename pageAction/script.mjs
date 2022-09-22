@@ -23,7 +23,9 @@ if (activeTab && activeTab.length) {
 tabTitleInput.focus();
 
 document.getElementById("set").addEventListener("click", async () => {
-  await browser.storage.local.set({ [activeTab[0].url]: tabTitleInput.value });
+  await browser.storage.local.set({
+    [activeTab[0].url]: tabTitleInput.value,
+  });
   close();
 });
 
